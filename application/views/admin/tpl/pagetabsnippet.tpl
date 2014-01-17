@@ -25,14 +25,16 @@
     [{assign var="_action" value=$sEditAction|default:"top.oxid.admin.changeEditBar"}]
     [{assign var="_param1" value=$edit->getAttribute('cl')}]
   [{/if}]
+   [{assign var="xploded" value=$_param1|explode:"_" }]
 
 
-      <div class="r1">
+    <div class="r1">
           [{ if $oxid != "-1" || $noOXIDCheck }]
-            <a href="#[{$_param1}]" onclick="[{$_action}]('[{$_param1}]',[{$_cnt}]);return false;">[{ oxmultilang ident=$edit->getAttribute('id') noerror=true}]</a>
+            <a href="#" onclick="loadindiv('[{$xploded[0]}]','main','[{$_param1}]');return false;">[{ oxmultilang ident=$edit->getAttribute('id') noerror=true}]</a>
           [{else}]
             [{ oxmultilang ident=$edit->getAttribute('id') noerror=true}]
           [{/if}]
+          [{* loadindiv('shop','aside','shop_list'); *}]
       </div>
 
 

@@ -11,6 +11,7 @@
         <![endif]-->
         <link rel="stylesheet" href="[{$oViewConf->getResourceUrl()}]css/reset.css" />
         <link rel="stylesheet" href="[{$oViewConf->getResourceUrl()}]css/desktop.css" />
+        <link rel="stylesheet" href="[{$oViewConf->getResourceUrl()}]css/as_admin.css" />
         <!--[if lt IE 9]>
         <link rel="stylesheet" href="[{$oViewConf->getResourceUrl()}]css/ie.css" />
         <![endif]-->

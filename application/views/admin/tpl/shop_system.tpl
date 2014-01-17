@@ -1,5 +1,3 @@
-[{include file="headitem.tpl" title="GENERAL_ADMIN_TITLE"|oxmultilangassign}]
-
 <script type="text/javascript">
 <!--
 function _groupExp(el) {
@@ -365,7 +363,3 @@ function _groupExp(el) {
 
 
 </form>
-
-[{include file="bottomnaviitem.tpl"}]
-
-[{include file="bottomitem.tpl"}]

@@ -1,6 +1,3 @@
-[{include file="headitem.tpl" title="GENERAL_ADMIN_TITLE"|oxmultilangassign}]
-
-
 [{ if $error}]<div class="errorbox">[{ $error }]</div>[{/if}]
 [{ if $message}]<div class="messagebox">[{ $message }]</div>[{/if}]
 
@@ -47,7 +44,3 @@
             </td>
         </tr>
         </table>
-
-[{include file="bottomnaviitem.tpl"}]
-
-[{include file="bottomitem.tpl"}]

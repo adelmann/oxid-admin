@@ -1,15 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 
-<html>
-<head>
-    <title>[{ oxmultilang ident="GENERAL_ADMIN_TITLE" }]</title>
-</head>
+    <div class="window_aside">side</div>
+    <div class="window_main">big</div>
 
-<!--
-  <frameset  rows="62,*" border="0" onload="document.getElementById('edit').src='[{$oViewConf->getSelfLink()}]&[{ $editurl }]&oxid=[{$currentadminshop}]';">
-    <frame src="[{$oViewConf->getSelfLink()}]&[{ $listurl }]&oxid=[{$currentadminshop}]" name="list" id="list" frameborder="0" scrolling="auto" noresize marginwidth="0" marginheight="0">
-    <frame src="" name="edit" id="edit" frameborder="0" scrolling="auto" noresize marginwidth="0" marginheight="0">
-</frameset>
-frames -->
-
-</html>
+<script>
+    loadindiv('shop','aside','shop_list');
+    loadindiv('shop','main','shop_main');
+</script>

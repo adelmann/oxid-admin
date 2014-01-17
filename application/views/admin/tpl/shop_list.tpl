@@ -66,5 +66,3 @@ if (parent.parent != null && parent.parent.setTitle )
     parent.parent.setTitle();
 }
 </script>
-</body>
-</html>

@@ -1,4 +1,5 @@
 [{assign var='mh' value=0 }]
+<input type="hidden" id="mystoken" value="[{$asid}]" />
 [{foreach from=$menustructure item=menuholder }]
     [{if $menuholder->nodeType == XML_ELEMENT_NODE && $menuholder->childNodes->length }]
     [{assign var='mh' value=$mh+1 }]
@@ -27,7 +28,7 @@
                         [{assign var='sm' value=$sm+1 }]
                         [{if $submenuitem->getAttribute('linkicon')}] [{assign var='linkicon' value=$submenuitem->getAttribute('linkicon') }][{/if}]
                         <li>
-                            <a href="#" class="openwindow" target="[{$submenuitem->getAttribute('cl')}]" asid="[{$asid}]">[{if $linkicon}]<span class="[{$linkicon}]">[{/if}][{ oxmultilang ident=$submenuitem->getAttribute('name')|default:$submenuitem->getAttribute('id') noerror=true }][{if $linkicon}]</span>[{/if}]</a>
+                            <a href="#" class="openwindow" target="[{$submenuitem->getAttribute('cl')}]" title="[{ oxmultilang ident=$submenuitem->getAttribute('name')|default:$submenuitem->getAttribute('id') noerror=true }]">[{if $linkicon}]<span class="[{$linkicon}]">[{/if}][{ oxmultilang ident=$submenuitem->getAttribute('name')|default:$submenuitem->getAttribute('id') noerror=true }][{if $linkicon}]</span>[{/if}]</a>
                         </li>
                         [{assign var='linkicon' value='' }]
                     [{/if}]

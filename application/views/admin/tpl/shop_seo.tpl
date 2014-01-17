@@ -1,6 +1,3 @@
-[{include file="headitem.tpl" title="GENERAL_ADMIN_TITLE"|oxmultilangassign}]
-
-
 [{ if $readonly}]
     [{assign var="readonly" value="readonly disabled"}]
 [{else}]
@@ -196,7 +193,3 @@
 
 
 </form>
-
-[{include file="bottomnaviitem.tpl"}]
-
-[{include file="bottomitem.tpl"}]
