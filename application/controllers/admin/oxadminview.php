@@ -180,7 +180,7 @@ class oxAdminView extends oxView
         $oLang->setBaseLanguage();
 
         parent::init();
-        $this->_aViewData['asid'] = oxConfig::getParameter( 'force_admin_sid' );
+        $this->_aViewData['asid'] = oxConfig::getParameter( 'stoken' );
             $this->_aViewData['malladmin'] = oxSession::getVar( 'malladmin' );
     }
 

@@ -1,4 +1,4 @@
-var asdesktopwindow = '<div id="window_title" class="abs window"><div class="abs window_inner"><div class="window_top"><span class="float_left"><img src="assets/images/icons/icon_16_computer.png" />title</span><span class="float_right"><a href="#" class="window_min"></a><a href="#" class="window_resize"></a><a href="#icon_dock_title" class="window_close"></a></span></div><div class="abs window_content"></div><span class="abs ui-resizable-handle ui-resizable-se"></span></div>';
+var asdesktopwindow = '<div id="window_title" class="abs window"><div class="abs window_inner"><div class="window_top"><span class="float_left"><img src="assets/images/icons/icon_16_computer.png" />title</span><span class="float_right"><a href="#" class="window_min"></a><a href="#" class="window_resize"></a><a href="#icon_dock_title" class="window_close"></a></span></div><div class="abs window_content"><div class="window_aside"></div><div class="window_main"></div></div></div><span class="abs ui-resizable-handle ui-resizable-se"></span></div>';
 var asbotombardock = '<li id="icon_dock_title"><a href="#window_title"><img src="assets/images/icons/icon_22_computer.png" />title</a></li>';
 
 
@@ -14,7 +14,8 @@ $(document).ready(function() {
             var newbottom = asbotombardock.replace(/title/ig,myfncclass)
             $('#desktop').append(newwindow);
             $('#bar_bottom').append(newbottom);
-            $('#window_'+myfncclass+' .window_content').load('index.php?cl='+myfncclass+'$force_admin_sid='+myfasid);
+            $('#window_'+myfncclass+' .window_content .window_aside').load('./index.php?cl='+myfncclass+'_list&stoken='+myfasid);
+            $('#window_'+myfncclass+' .window_content .window_main').load('./index.php?cl='+myfncclass+'_main&stoken='+myfasid);
             $('#window_'+myfncclass).show();
             $('#icon_dock_'+myfncclass).show();
         } else {

@@ -1,6 +1,4 @@
-<div class="tabs">
-<table cellspacing="0" cellpadding="0" border="0">
-<tr>
+
 [{assign var="_cnt" value="0"}]
 [{foreach from=$editnavi item=edit}]
   [{if $edit->getAttribute('active') }]
@@ -28,19 +26,15 @@
     [{assign var="_param1" value=$edit->getAttribute('cl')}]
   [{/if}]
 
-  <td class="tab [{$_state}]">
-      <div class="r1"><div class="b1">
+
+      <div class="r1">
           [{ if $oxid != "-1" || $noOXIDCheck }]
             <a href="#[{$_param1}]" onclick="[{$_action}]('[{$_param1}]',[{$_cnt}]);return false;">[{ oxmultilang ident=$edit->getAttribute('id') noerror=true}]</a>
           [{else}]
             [{ oxmultilang ident=$edit->getAttribute('id') noerror=true}]
           [{/if}]
-      </div></div>
-  </td>
+      </div>
+
 
   [{assign var="_cnt" value=$_cnt+1 }]
 [{/foreach}]
-  <td class="line"></td>
-</tr>
-</table>
-</div>
