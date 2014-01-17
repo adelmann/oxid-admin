@@ -22,19 +22,19 @@
  */
 
     /** @name database information */
-        $this->dbHost = '<dbHost_ce>'; // database host name
-        $this->dbName = '<dbName_ce>'; // database name
-        $this->dbUser = '<dbUser_ce>'; // database user name
-        $this->dbPwd  = '<dbPwd_ce>'; // database user password
+        $this->dbHost = 'localhost'; // database host name
+        $this->dbName = 'oxid-admin'; // database name
+        $this->dbUser = 'root'; // database user name
+        $this->dbPwd = 'root'; // database user password
         $this->dbType = 'mysql';
-        $this->sShopURL     = '<sShopURL_ce>'; // eShop base url, required
+        $this->sShopURL = 'http://oxid-admin'; // eShop base url, required
         $this->sSSLShopURL  = null;            // eShop SSL url, optional
         $this->sAdminSSLURL = null;            // eShop Admin SSL url, optional
-        $this->sShopDir     = '<sShopDir_ce>';
-        $this->sCompileDir  = '<sCompileDir_ce>';
+        $this->sShopDir = '/var/www/oxid-admin';
+        $this->sCompileDir = '/var/www/oxid-admin/tmp';
 
     // UTF-8 mode in shop 0 - off, 1 - on
-    $this->iUtfMode  = '<iUtfMode>';
+    $this->iUtfMode = 1;
 
     // File type whitelist for file upload
     $this->aAllowedUploadTypes = array('jpg', 'gif', 'png', 'pdf', 'mp3', 'avi', 'mpg', 'mpeg', 'doc', 'xls', 'ppt');
@@ -186,4 +186,8 @@
      * Instructs shop that price update is perfomed by cron (time based job sheduler)
      */
     $this->blUseCron = false;
-
+	
+	//Include from config.local.inc.php if file exists (DO NOT PUT ONE ON LIVE SERVER)
+	if (file_exists(dirname(__FILE__).'/config.local.inc.php')) {
+		include dirname(__FILE__).'/config.local.inc.php';
+	}
