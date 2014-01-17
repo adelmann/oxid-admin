@@ -28,6 +28,8 @@
  * Admin Menu.
  * @package admin
  */
+
+
 class Admin_Start extends oxAdminView
 {
     /**
@@ -35,4 +37,10 @@ class Admin_Start extends oxAdminView
      * @var string
      */
     protected $_sThisTemplate = 'start.tpl';
+
+    public function startall(){
+        die();
+    }
 }
+
+

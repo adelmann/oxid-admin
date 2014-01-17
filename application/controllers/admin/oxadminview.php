@@ -118,6 +118,11 @@ class oxAdminView extends oxView
         $myConfig = $this->getConfig();
         $myConfig->setConfigParam( 'blAdmin', true );
         $this->setAdminMode( true );
+        $oNavTree = $this->getNavigation();
+        // NEW BY AS
+        // set menu structure
+        $this->_aViewData["menustructure"] = $oNavTree->getDomXml()->documentElement->childNodes;
+
 
         if ( $oShop = $this->_getEditShop( $myConfig->getShopId() ) ) {
             // passing shop info
@@ -126,6 +131,8 @@ class oxAdminView extends oxView
 
         }
     }
+
+
 
     /**
      * Returns (cached) shop object

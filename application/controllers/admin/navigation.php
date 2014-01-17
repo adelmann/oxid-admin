@@ -24,6 +24,7 @@
  * Administrator GUI navigation manager class.
  * @package admin
  */
+
 class Navigation extends oxAdminView
 {
     /**
@@ -52,6 +53,11 @@ class Navigation extends oxAdminView
             if ( is_array( $aFavorites ) ) {
                 $myUtilsServer->setOxCookie('oxidadminfavorites', implode( '|', $aFavorites ) );
             }
+            $oNavTree = $this->getNavigation();
+            // set menu structure
+            $this->_aViewData["menustructure"] = $oNavTree->getDomXml()->documentElement->childNodes;
+            print_r($this->_aViewData["menustructure"]);
+
         } else {
             $oNavTree = $this->getNavigation();
 

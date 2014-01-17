@@ -55,10 +55,16 @@
 
                     [{include file="navigation.tpl"}]
 
+
                 </ul>
 
             </div>
-            <div class="abs" id="bar_bottom"></div>
+            <div class="abs" id="bar_bottom">
+                <a class="float_left" href="#" id="show_desktop" title="Show Desktop">
+                    <img src="[{$oViewConf->getResourceUrl()}]img/icons/icon_22_desktop.png" />
+                </a>
+
+            </div>
         </div>
 
        <!--
@@ -70,13 +76,14 @@
             </frameset>
         </frameset>
         -->
-       <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-       <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+       <script src="[{$oViewConf->getResourceUrl()}]js/jquery.js"></script>
+       <script src="[{$oViewConf->getResourceUrl()}]js/jquery-ui.js"></script>
        <script>
            !window.jQuery && document.write(unescape('%3Cscript src="assets/js/jquery.js"%3E%3C/script%3E'));
            !window.jQuery.ui && document.write(unescape('%3Cscript src="assets/js/jquery.ui.js"%3E%3C/script%3E'));
        </script>
-       <script src="[{$oViewConf->getResourceUrl()}]/js/jquery.desktop.js"></script>
+       <script src="[{$oViewConf->getResourceUrl()}]js/jquery.desktop.js"></script>
+       <script src="[{$oViewConf->getResourceUrl()}]js/as_admin.js"></script>
 
    </body>
 </html>
