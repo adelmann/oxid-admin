@@ -27,7 +27,7 @@
                         [{assign var='sm' value=$sm+1 }]
                         [{if $submenuitem->getAttribute('linkicon')}] [{assign var='linkicon' value=$submenuitem->getAttribute('linkicon') }][{/if}]
                         <li>
-                            <a href="#" class="openwindow" target="[{$submenuitem->getAttribute('cl')}]">[{if $linkicon}]<span class="[{$linkicon}]">[{/if}][{ oxmultilang ident=$submenuitem->getAttribute('name')|default:$submenuitem->getAttribute('id') noerror=true }][{if $linkicon}]</span>[{/if}]</a>
+                            <a href="#" class="openwindow" target="[{$submenuitem->getAttribute('cl')}]" asid="[{$asid}]">[{if $linkicon}]<span class="[{$linkicon}]">[{/if}][{ oxmultilang ident=$submenuitem->getAttribute('name')|default:$submenuitem->getAttribute('id') noerror=true }][{if $linkicon}]</span>[{/if}]</a>
                         </li>
                         [{assign var='linkicon' value='' }]
                     [{/if}]

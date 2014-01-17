@@ -122,6 +122,7 @@ class oxAdminView extends oxView
         // NEW BY AS
         // set menu structure
         $this->_aViewData["menustructure"] = $oNavTree->getDomXml()->documentElement->childNodes;
+        $this->_aViewData["asid"] = $oNavTree->getDomXml()->documentElement->childNodes;
 
 
         if ( $oShop = $this->_getEditShop( $myConfig->getShopId() ) ) {
@@ -179,7 +180,7 @@ class oxAdminView extends oxView
         $oLang->setBaseLanguage();
 
         parent::init();
-
+        $this->_aViewData['asid'] = oxConfig::getParameter( 'force_admin_sid' );
             $this->_aViewData['malladmin'] = oxSession::getVar( 'malladmin' );
     }
 

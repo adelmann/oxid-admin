@@ -7,13 +7,17 @@ $(document).ready(function() {
    // Main Menu Click
     $('.openwindow').click(function() {
         var myfncclass = $(this).attr("target");
+        var myfasid = $(this).attr("asid");
 
         if ($('#window_'+myfncclass).length == 0) {
             var newwindow = asdesktopwindow.replace(/title/ig,myfncclass)
             var newbottom = asbotombardock.replace(/title/ig,myfncclass)
             $('#desktop').append(newwindow);
             $('#bar_bottom').append(newbottom);
-            $('#window_'+myfncclass+' .window_content').load('index.php?cl='+myfncclass);
+            $('#window_'+myfncclass+' .window_content').load('index.php?cl='+myfncclass+'$force_admin_sid='+myfasid);
+            $('#window_'+myfncclass).show();
+            $('#icon_dock_'+myfncclass).show();
+        } else {
             $('#window_'+myfncclass).show();
             $('#icon_dock_'+myfncclass).show();
         }

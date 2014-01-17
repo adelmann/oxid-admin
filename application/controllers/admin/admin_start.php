@@ -38,9 +38,7 @@ class Admin_Start extends oxAdminView
      */
     protected $_sThisTemplate = 'start.tpl';
 
-    public function startall(){
-        die();
-    }
+
 }
 
 
