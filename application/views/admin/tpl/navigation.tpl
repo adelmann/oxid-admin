@@ -23,14 +23,14 @@
             [{if $menuitem->childNodes->length }]
             <ul class="menu">
                 [{foreach from=$menuitem->childNodes item=submenuitem }]
-                [{if $submenuitem->nodeType == XML_ELEMENT_NODE}]
-                [{assign var='sm' value=$sm+1 }]
-                [{if $submenuitem->getAttribute('linkicon')}] [{assign var='linkicon' value=$submenuitem->getAttribute('linkicon') }][{/if}]
-                <li class="[{if $submenuitem->getAttribute('active')}]act[{assign var='sNavActId' value="nav-`$mh`-`$mn`-`$sm`" }][{/if}]" id="nav-[{$mh}]-[{$mn}]-[{$sm}]">
-                    <a href="#" target="basefrm" link="[{if $submenuitem->getAttribute('url')}][{$submenuitem->getAttribute('url')}][{else}][{ $submenuitem->getAttribute('link') }][{/if}]">[{if $linkicon}]<span class="[{$linkicon}]">[{/if}][{ oxmultilang ident=$submenuitem->getAttribute('name')|default:$submenuitem->getAttribute('id') noerror=true }][{if $linkicon}]</span>[{/if}]</a>
-                </li>
-                [{assign var='linkicon' value='' }]
-                [{/if}]
+                    [{if $submenuitem->nodeType == XML_ELEMENT_NODE}]
+                        [{assign var='sm' value=$sm+1 }]
+                        [{if $submenuitem->getAttribute('linkicon')}] [{assign var='linkicon' value=$submenuitem->getAttribute('linkicon') }][{/if}]
+                        <li>
+                            <a href="#" class="openwindow" target="[{$submenuitem->getAttribute('cl')}]">[{if $linkicon}]<span class="[{$linkicon}]">[{/if}][{ oxmultilang ident=$submenuitem->getAttribute('name')|default:$submenuitem->getAttribute('id') noerror=true }][{if $linkicon}]</span>[{/if}]</a>
+                        </li>
+                        [{assign var='linkicon' value='' }]
+                    [{/if}]
                 [{/foreach}]
             </ul>
             [{/if}]

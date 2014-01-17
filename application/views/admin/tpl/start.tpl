@@ -76,8 +76,10 @@
             </frameset>
         </frameset>
         -->
-       <script src="[{$oViewConf->getResourceUrl()}]js/jquery.js"></script>
-       <script src="[{$oViewConf->getResourceUrl()}]js/jquery-ui.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+       [{*<script src="[{$oViewConf->getResourceUrl()}]js/jquery.js"></script>
+       <script src="[{$oViewConf->getResourceUrl()}]js/jquery-ui.js"></script>*}]
        <script>
            !window.jQuery && document.write(unescape('%3Cscript src="assets/js/jquery.js"%3E%3C/script%3E'));
            !window.jQuery.ui && document.write(unescape('%3Cscript src="assets/js/jquery.ui.js"%3E%3C/script%3E'));
