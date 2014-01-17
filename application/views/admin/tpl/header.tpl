@@ -18,6 +18,7 @@
       <li class="sep">
           <a href="[{$oViewConf->getSelfLink()}]&cl=navigation&amp;fnc=logout" id="logoutlink" target="_parent" class="rc"><b>[{ oxmultilang ident="NAVIGATION_LOGOUT" }]</b></a>
       </li>
+      [{include file="navigation.tpl"}]
     </ul>
 
     <div class="version">
