@@ -1,4 +1,4 @@
-[{include file="headitem.tpl" title="GENERAL_ADMIN_TITLE"|oxmultilangassign box="list"}]
+
 [{assign var="where" value=$oView->getListFilter()}]
 
 [{ if $readonly}]
@@ -118,15 +118,3 @@ window.onload = function ()
 
 
 [{include file="pagetabsnippet.tpl"}]
-
-<script type="text/javascript">
-if (parent.parent)
-{   parent.parent.sShopTitle   = "[{$actshopobj->oxshops__oxname->getRawValue()|oxaddslashes}]";
-    parent.parent.sMenuItem    = "[{ oxmultilang ident="COUNTRY_LIST_MENUITEM" }]";
-    parent.parent.sMenuSubItem = "[{ oxmultilang ident="COUNTRY_LIST_MENUSUBITEM" }]";
-    parent.parent.sWorkArea    = "[{$_act}]";
-    parent.parent.setTitle();
-}
-</script>
-</body>
-</html>

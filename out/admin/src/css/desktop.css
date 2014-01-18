@@ -281,8 +281,12 @@ div.ui-resizable-handle {
 
 .window_main {
   background: #fff;
-  margin: 0 0 0 173px;
-  min-height: 100%;
+    margin: 0 0 0 173px;
+    min-height: 100%;
+}
+.window_main.big {
+    margin-left:0px !important;
+    min-width:100%;
 }
 
 .window_full .window_top,

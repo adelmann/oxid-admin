@@ -1,4 +1,8 @@
-var asdesktopwindow = '<div id="window_title" class="abs window"></div><div class="abs window_inner"><div class="window_top"><span class="float_left"><img src="assets/images/icons/icon_16_computer.png" />titletext</span><span class="float_right"><a href="#" class="window_min"></a><a href="#" class="window_resize"></a><a href="#icon_dock_title" class="window_close"></a></span></div><div class="abs window_content"></div></div><span class="abs ui-resizable-handle ui-resizable-se"></span></div>';
+// TODO: FadeinLoader
+// TODO: LISTITEM OPENS NEW WINDOW
+//
+
+var asdesktopwindow = '<div id="window_title" class="abs window"><div class="abs window_inner"><div class="window_top"><span class="float_left"><img src="assets/images/icons/icon_16_computer.png" />titletext</span><span class="float_right"><a href="#" class="window_min"></a><a href="#" class="window_resize"></a><a href="#icon_dock_title" class="window_close"></a></span></div><div class="abs window_content"></div></div><span class="abs ui-resizable-handle ui-resizable-se"></span></div>';
 var asbotombardock = '<li id="icon_dock_title"><a href="#window_title"><img src="assets/images/icons/icon_22_computer.png" />titletext</a></li>';
 var inwindowloader = '<div class="loader">load</div>';
 
@@ -6,13 +10,10 @@ var mastoken = $('#mystoken').attr('value');
 
 // Load Div Elements in Window
 function loadindiv(actid,target,link){
-    $('#window_'+actid+' .window_content .window_'+target).load('./index.php?cl='+link+'&stoken='+mastoken);
-}
-
-// Reload
-function inwindowchangemain(link,cnt) {
-    alert($(this).closest('.window').attr('id'));
-    $('#window_'+actid+' .window_content .window_main').load('./index.php?cl='+link+'&stoken='+mastoken);
+    $('#window_'+actid+ ' .window_content').append(inwindowloader);
+    $('#window_'+actid+' .window_content .window_'+target).load('./index.php?cl='+link+'&stoken='+mastoken, function() {
+        $('#window_'+actid+' .loader').remove();
+    });
 }
 
 $(document).ready(function() {
@@ -40,7 +41,37 @@ $(document).ready(function() {
         }
     });
 
-    //Close Window
+    //FORM Submit
+    //TODO: Show Loader
+    $('form').live('submit',function() {
+        mywindow = $(this).closest('.window').attr('id');
+        //alert('window:'+mywindow+' Data:'+$(this).serialize());
+        $('#window_'+mywindow+ ' .window_content').append(inwindowloader);
+        $.ajax({ 	// create an AJAX call...
+            data: $(this).serialize(), // get the form data
+            type: $(this).attr('method'), // GET or POST
+            url: $(this).attr('action'), // the file to call
+            success: function(response) { // on success..
+                //alert($(this).attr('action'));
+                //alert('test:');
+                $('#window_'+mywindow+' .loader').remove();
+                $('#'+mywindow+' .window_main').html(response); // update the DIV - should I use the DIV id?
+            }
+        });
+        if (typeof listupdate != 'undefined') {
+            if (listupdate == 1) {
+                //alert('test');
+                $('#window_'+listwinnameup+ ' .window_content').append(inwindowloader);
+                $('#window_'+listwinnameup+' .window_main').load(myselfl+'cl='+listwinnameup, function(status) {
+                    //alert(myselfl+'cl='+listwinnameup);
+                    $('#window_'+listwinnameup+' .loader').remove();
+                });
+            }
+        }
+        return false;
+    });
+
+
 
 });
 
