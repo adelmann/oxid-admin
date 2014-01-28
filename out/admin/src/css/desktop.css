@@ -4,15 +4,17 @@
 * {
   cursor: default;
 }
-
+html {box-shadow:inset 0 0 500px #999999;}
 html,
 body {
-  overflow: hidden;
+    overflow: hidden;
+
 }
 
 body {
-  background: #222;
-  font: 12px/1 'Lucida Grande', Arial, 'Liberation Sans', FreeSans, sans-serif;
+    background: #fff;
+    font: 12px/1 'Lucida Grande', Arial, 'Liberation Sans', FreeSans, sans-serif;
+
 }
 
 a {
@@ -113,11 +115,7 @@ div.ui-resizable-handle {
 
 .window {
   background: #fff;
-  border: 1px solid #000;
-  border-radius: 5px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -webkit-background-clip: padding-box;
+  border: 1px solid #ccc;
   color: #000;
   display: none;
   width: 700px;
@@ -165,14 +163,7 @@ div.ui-resizable-handle {
 }
 
 .window_top {
-  background: #333 url(../../img/gui/bar_bottom.png) repeat-x;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  -moz-border-radius-topleft: 5px;
-  -moz-border-radius-topright: 5px;
-  -webkit-border-top-left-radius: 5px;
-  -webkit-border-top-right-radius: 5px;
-  -webkit-background-clip: padding-box;
+  background: #5678BC;
   color: #fff;
   font-weight: bold;
   overflow: hidden;
@@ -184,7 +175,9 @@ div.ui-resizable-handle {
 
 .window_top img {
   float: left;
-  margin: 6px 5px 0 0;
+  margin: 2px 5px 0 0;
+  background: #fff;
+  border: 1px solid #ccc;
 }
 
 .window_bottom {
@@ -357,6 +350,10 @@ th.shrink {
 }
 
 #bar_top {
+    background: #3B5998;
+    height:37px;
+    border-bottom:1px solid #133783;
+/*
   background: #fff url(../../img/gui/bar_top.png) repeat-x left bottom;
   border-bottom: 1px solid #333;
   color: #999;
@@ -365,6 +362,7 @@ th.shrink {
   text-shadow: #fff 0 1px 1px;
   height: 25px;
   top: 0;
+  */
 }
 
 #bar_bottom {
@@ -387,7 +385,11 @@ th.shrink {
 
 #bar_top li,
 #bar_bottom li {
-  float: left;
+    color: #FFFFFF;
+    display: block;
+    float: left;
+    height: 37px;
+    line-height: 37px;
 }
 
 #bar_top li a,
@@ -397,14 +399,12 @@ th.shrink {
 }
 
 #bar_top li a {
-  background-image: url(../../img/gui/bar_top_link.png);
-  background-repeat: no-repeat;
-  background-position: -99999px -99999px;
-  color: #000;
-  overflow: hidden;
-  height: 25px;
-  min-height: 1px;
+    color: #fff;
+    overflow: hidden;
+    min-height: 1px;
 }
+#bar_top li li {height:26px;line-height: 26px;}
+#bar_top li li a{color:#000;}
 
 #bar_top a.active {
   background-color: #06c;
@@ -530,3 +530,7 @@ th.shrink {
   min-width: 700px;
   min-height: 500px;
 }
+
+.r1 {border-bottom: 1px solid #FFFFFF;
+    display: block;
+    padding: 5px 0;}
