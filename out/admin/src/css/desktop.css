@@ -118,7 +118,7 @@ div.ui-resizable-handle {
   border: 1px solid #ccc;
   color: #000;
   display: none;
-  width: 700px;
+  width: 888px;
   height: 300px;
   top: 30px;
   left: 120px;
@@ -531,6 +531,30 @@ th.shrink {
   min-height: 500px;
 }
 
-.r1 {border-bottom: 1px solid #FFFFFF;
+.r1 {
     display: block;
     padding: 5px 0;}
+
+.loaderinwindow {
+    height: 100%;
+    width: 100%;
+    background: #fff;
+    opacity: 0.8;
+    z-index: 10000;
+    display: none;
+    position: absolute;
+    top:0px;
+}
+.loaderinwindow div {
+    position: absolute;
+    width: 200px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    color: #000;
+    margin-left: -100px;
+    margin-top: -150px;
+    font-size: 25px;
+    font-weight: bold;
+}

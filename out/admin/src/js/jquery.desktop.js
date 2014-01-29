@@ -113,7 +113,7 @@ var JQD = (function($, window, document, undefined) {
 
         // Cancel right-click.
         d.on('contextmenu', function() {
-          return false;
+         // return false;
         });
 
         // Relative or remote links?

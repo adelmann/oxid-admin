@@ -40,17 +40,17 @@ dl dd ul {padding:3px 0 0 0;}
 dl dd ul a {color:#535353}
 
 /* Lists */
-#liste {padding: 5px 0 32px;}
-#liste td.listfilter {background: #f0f0f0 url(bg/filter_bg.gif) -1px 0 no-repeat;padding:0 0 0 5px;white-space:nowrap;}
-#liste td.listfilter input, #liste td.listfilter  select{font-size: 11px;}
-#liste td.listfilter .r1{background: #f0f0f0 url(bg/filter_bg.gif) top right no-repeat;padding:0 5px 0 0;}
-#liste td.listfilter .b1{background: #f0f0f0;padding:5px 0 2px;border-top: 1px solid #c8c8c8;height: 25px;}
-#liste td.listfilter.first{background-position: 0 0;}
+#liste {}
+#liste td.listfilter {background: #f0f0f0 ;padding:0 0 0 5px;white-space:nowrap;}
+#liste td.listfilter input, #liste td.listfilter  select{border:1px solid #ccc; padding:5px;}
+#liste td.listfilter .r1{}
+#liste td.listfilter .b1{}
+#liste td.listfilter.first{}
 #liste td.listfilter .find{float:right;}
-#liste td.listfilter .find input{border:0;color:transparent;background: #f0f0f0 url(bg/ico_find.gif) center center no-repeat;width:20px;height:20px;padding-left:20px;cursor: pointer;cursor: hand;}
+#liste td.listfilter .find input{color:transparent;background: #f0f0f0;cursor: pointer;cursor: hand;}
 
-#liste td.listheader {background-color: #f0f0f0;border:1px solid #c8c8c8;padding:0 5px 2px;border-top:none;border-left:none;color:#000;font-weight: bold;white-space:nowrap;}
-#liste td.listheader.first{border-left:1px solid #c8c8c8;}
+#liste td.listheader {padding:5px; background: #EFEFEF;border-bottom:1px solid #0099ff;}
+#liste td.listheader.first{}
 #liste td.listitem {background-color:#fafafa;border-right:1px solid #fff;}
 #liste td.listitem2 {background-color:#f0f0f0;border-right:1px solid #fff;}
 #liste td.listitem3 {background-color:#fff;color:#7a7a7a;border-right:1px solid #fff;}
@@ -80,9 +80,10 @@ a.pause:hover{background-position:-15px center;}
 #liste td a.listitemgreen {color:#090;}
 #liste td a.listitemred   {color:#a00;}
 
-#liste td.pagination  {background: #f0f0f0 url(bg/pagination_bg.gif) bottom left no-repeat;padding:0 0 0 5px;border-top: 1px solid #c8c8c8;margin-top:1px;}
-#liste td.pagination  .r1{background: #f0f0f0 url(bg/pagination_bg.gif) bottom right no-repeat;padding:0 5px 0 0;}
-#liste td.pagination  .b1{background: #f0f0f0;padding:2px 5px;border-bottom: 1px solid #c8c8c8;height: 25px;}
+#liste tr.datarow:hover td{background:#5bc0de;}
+#liste td.pagination  {background:#F0F0F0;}
+#liste td.pagination  .r1{}
+#liste td.pagination  .b1{}
 #liste td.pagination  input {text-align: center;}
 
 .box td.listheader {background-color: #f0f0f0;border:1px solid #c8c8c8;padding:2px 5px;border-left:none;color:#000;font-weight: bold;}

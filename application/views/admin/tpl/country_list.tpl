@@ -82,7 +82,7 @@ window.onload = function ()
 [{assign var="_cnt" value=0}]
 [{foreach from=$mylist item=listitem}]
     [{assign var="_cnt" value=$_cnt+1}]
-    <tr id="row.[{$_cnt}]">
+    <tr class="datarow" id="row.[{$_cnt}]">
         [{block name="admin_country_list_item"}]
             [{ if $listitem->blacklist == 1}]
                 [{assign var="listclass" value=listitem3 }]
@@ -115,6 +115,3 @@ window.onload = function ()
 </table>
 </form>
 </div>
-
-
-[{include file="pagetabsnippet.tpl"}]

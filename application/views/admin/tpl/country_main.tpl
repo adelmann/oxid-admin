@@ -29,7 +29,7 @@ window.onload = function ()
 <form name="myedit" id="myedit" action="[{ $oViewConf->getSelfLink() }]" method="post">
 [{ $oViewConf->getHiddenSid() }]
 <input type="hidden" name="cl" value="country_main">
-<input type="hidden" name="fnc" value="">
+<input type="hidden" name="fnc" value="save">
 <input type="hidden" name="oxid" value="[{ $oxid }]">
 <input type="hidden" name="voxid" value="[{ $oxid }]">
 <input type="hidden" name="oxparentid" value="[{ $oxparentid }]">
@@ -138,7 +138,7 @@ window.onload = function ()
             <td class="edittext"><br><br>
             </td>
             <td class="edittext"><br><br>
-            <input type="submit" class="edittext" id="oLockButton" name="saveArticle" value="[{ oxmultilang ident="GENERAL_SAVE" }]" onClick="Javascript:document.myedit.fnc.value='save'"" [{ $readonly }] [{ if !$edit->oxcountry__oxtitle->value && !$oxparentid }]disabled[{/if}]><br>
+                <input type="submit" class="edittext" name="saveArticle" value="[{ oxmultilang ident="GENERAL_SAVE" }]" [{ $readonly }]><br>
             </td>
         </tr>
 
@@ -159,6 +159,3 @@ window.onload = function ()
 
 </form>
 
-[{include file="bottomnaviitem.tpl"}]
-
-[{include file="bottomitem.tpl"}]

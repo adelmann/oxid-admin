@@ -1,6 +1,6 @@
 
-    <div class="window_aside">side</div>
-    <div class="window_main">big</div>
+    <div class="window_aside"></div>
+    <div class="window_main"></div>
 
 <script>
     loadindiv('shop','aside','shop_list');
